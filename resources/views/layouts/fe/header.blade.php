@@ -1,5 +1,5 @@
 <header>
-    <div class="header-top">
+    {{-- <div class="header-top">
         <div class="container">
             <ul class="header-social-container">
                 <li>
@@ -40,7 +40,7 @@
                 </select>
             </div>
         </div>
-    </div>
+    </div> --}}
 
     <div class="header-main">
         <div class="container">

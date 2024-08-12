@@ -21,7 +21,6 @@ class DatabaseSeeder extends Seeder
             WebsiteTableSeeder::class,
             CategorySeeder::class,
             ProductTableSeeder::class,
-            StokProductSeeder::class,
         ]);
     }
 }
