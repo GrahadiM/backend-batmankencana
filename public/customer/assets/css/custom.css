@@ -1,0 +1,30 @@
+/*-----------------------------------*\
+  #CTA in Contact Us Page
+\*-----------------------------------*/
+
+.cta-contact-container {
+    position: relative;
+    aspect-ratio: 5 / 6;
+    -webkit-border-radius: var(--border-radius-md);
+            border-radius: var(--border-radius-md);
+    overflow: hidden;
+    margin-bottom: 25px;
+}
+
+.cta-contact-container { aspect-ratio: 6 / 5; }
+
+.testimonial, .cta-contact-container {
+    min-width: -webkit-calc(50% - 15px);
+    min-width: calc(50% - 15px);
+    width: -webkit-calc(50% - 15px);
+    width: calc(50% - 15px);
+    margin-bottom: 0;
+}
+
+.cta-contact-container {
+    min-width: -webkit-calc(50% - 20px);
+    min-width: calc(50% - 20px);
+    width: -webkit-calc(50% - 20px);
+    width: calc(50% - 20px);
+    aspect-ratio: unset;
+  }

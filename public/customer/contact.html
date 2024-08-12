@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BATMANKENCANA</title>
+    <!-- favicon -->
+    <link rel="shortcut icon" href="./assets/images/logo/favicon.ico" type="image/x-icon">
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- custom css link -->
+    <link rel="stylesheet" href="./assets/css/style-prefix.css">
+    <!-- google font link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <div class="overlay" data-overlay></div>
+
+    <!-- Start HEADER -->
+    <header>
+        <div class="header-top">
+            <div class="container">
+                <ul class="header-social-container">
+                    <li>
+                        <a href="javascript:void(0)" class="social-link">
+                            <ion-icon name="logo-facebook"></ion-icon>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" class="social-link">
+                            <ion-icon name="logo-twitter"></ion-icon>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" class="social-link">
+                            <ion-icon name="logo-instagram"></ion-icon>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" class="social-link">
+                            <ion-icon name="logo-linkedin"></ion-icon>
+                        </a>
+                    </li>
+                </ul>
+                <div class="header-alert-news">
+                    <p>
+                        <b>Promo Gratis Ongkir</b>
+                        Hingga Rp.10.000,-
+                    </p>
+                </div>
+                <div class="header-top-actions">
+                    <select name="currency">
+                        <option value="idr">IDR &#82;&#112;</option>
+                        <option value="usd">USD &dollar;</option>
+                    </select>
+                    <select name="language">
+                        <option value="id_ID">Indonesia</option>
+                        <option value="en_US">English</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="header-main">
+            <div class="container">
+                <a href="javascript:void(0)" class="header-logo">
+                    <img src="./assets/images/logo-default.png" alt="BATMANKENCANA" width="120" height="120">
+                </a>
+                <div class="header-search-container">
+                    <input type="search" name="search" class="search-field" placeholder="Enter your product name...">
+                    <button class="search-btn">
+                        <ion-icon name="search-outline"></ion-icon>
+                    </button>
+                </div>
+                <div class="header-user-actions">
+                    <button class="action-btn" onclick="location.href='profile.html';">
+                        <ion-icon name="person-outline"></ion-icon>
+                    </button>
+
+                    <button class="action-btn" onclick="location.href='wishlist.html';">
+                        <ion-icon name="heart-outline"></ion-icon>
+                        <span class="count">0</span>
+                    </button>
+
+                    <button class="action-btn" onclick="location.href='cart.html';">
+                        <ion-icon name="bag-handle-outline"></ion-icon>
+                        <span class="count">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <nav class="desktop-navigation-menu">
+            <div class="container">
+                <ul class="desktop-menu-category-list">
+                    <li class="menu-category">
+                        <a href="index.html" class="menu-title">Home</a>
+                    </li>
+                    <li class="menu-category">
+                        <a href="category.html" class="menu-title">Categories</a>
+                        <div class="dropdown-panel">
+                            <ul class="dropdown-panel-list">
+                                <li class="menu-title">
+                                    <a href="javascript:void(0)">Lightstick</a>
+                                </li>
+                                <li class="panel-list-item">
+                                    <a href="javascript:void(0)">Official Lightstick</a>
+                                </li>
+                                <li class="panel-list-item">
+                                    <a href="javascript:void(0)">Unofficial Lightstick</a>
+                                </li>
+                            </ul>
+                            <ul class="dropdown-panel-list">
+                                <li class="menu-title">
+                                    <a href="javascript:void(0)">Album</a>
+                                </li>
+                                <li class="panel-list-item">
+                                    <a href="javascript:void(0)">Official Album</a>
+                                </li>
+                                <li class="panel-list-item">
+                                    <a href="javascript:void(0)">Unofficial Album</a>
+                                </li>
+                            </ul>
+                            <ul class="dropdown-panel-list">
+                                <li class="menu-title">
+                                    <a href="javascript:void(0)">Good</a>
+                                </li>
+                                <li class="panel-list-item">
+                                    <a href="javascript:void(0)">Official Good</a>
+                                </li>
+                                <li class="panel-list-item">
+                                    <a href="javascript:void(0)">Unofficial Good</a>
+                                </li>
+                            </ul>
+                            <ul class="dropdown-panel-list">
+                                <li class="menu-title">
+                                    <a href="javascript:void(0)">New Arrivals</a>
+                                </li>
+                                <li class="panel-list-item">
+                                    <a href="javascript:void(0)">Official New Arrivals</a>
+                                </li>
+                                <li class="panel-list-item">
+                                    <a href="javascript:void(0)">Unofficial New Arrivals</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="menu-category">
+                        <a href="contact.html" class="menu-title">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="mobile-bottom-navigation">
+            <button class="action-btn" onclick="location.href='cart.html';">
+                <ion-icon name="bag-handle-outline"></ion-icon>
+                <span class="count">0</span>
+            </button>
+            <button class="action-btn" onclick="location.href='index.html';">
+                <ion-icon name="home-outline"></ion-icon>
+            </button>
+            <button class="action-btn" onclick="location.href='wishlist.html';">
+                <ion-icon name="heart-outline"></ion-icon>
+                <span class="count">0</span>
+            </button>
+        </div>
+
+        <nav class="mobile-navigation-menu  has-scrollbar" data-mobile-menu>
+            <div class="menu-top">
+                <h2 class="menu-title">Menu</h2>
+                <button class="menu-close-btn" data-mobile-menu-close-btn>
+                    <ion-icon name="close-outline"></ion-icon>
+                </button>
+            </div>
+            <ul class="mobile-menu-category-list">
+                <li class="menu-category">
+                    <a href="index.html" class="menu-title">Home</a>
+                </li>
+                <li class="menu-category">
+                    <button class="accordion-menu" data-accordion-btn>
+                        <p class="menu-title">Lightstick</p>
+                        <div>
+                            <ion-icon name="add-outline" class="add-icon"></ion-icon>
+                            <ion-icon name="remove-outline" class="remove-icon"></ion-icon>
+                        </div>
+                    </button>
+                    <ul class="submenu-category-list" data-accordion>
+                        <li class="submenu-category">
+                            <a href="javascript:void(0)" class="submenu-title">Shirt</a>
+                        </li>
+                        <li class="submenu-category">
+                            <a href="javascript:void(0)" class="submenu-title">Shorts & Jeans</a>
+                        </li>
+                        <li class="submenu-category">
+                            <a href="javascript:void(0)" class="submenu-title">Safety Shoes</a>
+                        </li>
+                        <li class="submenu-category">
+                            <a href="javascript:void(0)" class="submenu-title">Wallet</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="menu-category">
+                    <button class="accordion-menu" data-accordion-btn>
+                        <p class="menu-title">Women's</p>
+                        <div>
+                            <ion-icon name="add-outline" class="add-icon"></ion-icon>
+                            <ion-icon name="remove-outline" class="remove-icon"></ion-icon>
+                        </div>
+                    </button>
+                    <ul class="submenu-category-list" data-accordion>
+                        <li class="submenu-category">
+                            <a href="javascript:void(0)" class="submenu-title">Dress & Frock</a>
+                        </li>
+                        <li class="submenu-category">
+                            <a href="javascript:void(0)" class="submenu-title">Earrings</a>
+                        </li>
+                        <li class="submenu-category">
+                            <a href="javascript:void(0)" class="submenu-title">Necklace</a>
+                        </li>
+                        <li class="submenu-category">
+                            <a href="javascript:void(0)" class="submenu-title">Makeup Kit</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="menu-category">
+                    <button class="accordion-menu" data-accordion-btn>
+                        <p class="menu-title">Jewelry</p>
+                        <div>
+                            <ion-icon name="add-outline" class="add-icon"></ion-icon>
+                            <ion-icon name="remove-outline" class="remove-icon"></ion-icon>
+                        </div>
+                    </button>
+                    <ul class="submenu-category-list" data-accordion>
+                        <li class="submenu-category">
+                            <a href="javascript:void(0)" class="submenu-title">Earrings</a>
+                        </li>
+                        <li class="submenu-category">
+                            <a href="javascript:void(0)" class="submenu-title">Couple Rings</a>
+                        </li>
+                        <li class="submenu-category">
+                            <a href="javascript:void(0)" class="submenu-title">Necklace</a>
+                        </li>
+                        <li class="submenu-category">
+                            <a href="javascript:void(0)" class="submenu-title">Bracelets</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="menu-category">
+                    <a href="contact.html" class="menu-title">Contact Us</a>
+                </li>
+            </ul>
+
+            <div class="menu-bottom">
+                <ul class="menu-category-list">
+                    <li class="menu-category">
+                        <button class="accordion-menu" data-accordion-btn>
+                            <p class="menu-title">Language</p>
+                            <ion-icon name="caret-back-outline" class="caret-back"></ion-icon>
+                        </button>
+                        <ul class="submenu-category-list" data-accordion>
+                            <li class="submenu-category">
+                                <a href="javascript:void(0)" class="submenu-title">Indonesia</a>
+                            </li>
+                            <li class="submenu-category">
+                                <a href="javascript:void(0)" class="submenu-title">English</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="menu-category">
+                        <button class="accordion-menu" data-accordion-btn>
+                            <p class="menu-title">Currency</p>
+                            <ion-icon name="caret-back-outline" class="caret-back"></ion-icon>
+                        </button>
+                        <ul class="submenu-category-list" data-accordion>
+                            <li class="submenu-category">
+                                <a href="javascript:void(0)" class="submenu-title">IDR &#82;&#112;</a>
+                            </li>
+                            <li class="submenu-category">
+                                <a href="javascript:void(0)" class="submenu-title">USD &dollar;</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <ul class="menu-social-container">
+                    <li>
+                        <a href="javascript:void(0)" class="social-link">
+                            <ion-icon name="logo-facebook"></ion-icon>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" class="social-link">
+                            <ion-icon name="logo-twitter"></ion-icon>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" class="social-link">
+                            <ion-icon name="logo-instagram"></ion-icon>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" class="social-link">
+                            <ion-icon name="logo-linkedin"></ion-icon>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!-- End HEADER -->
+
+    <!-- Start MAIN -->
+    <main class="mt-5 mb-5">
+        <!-- TESTIMONIALS, CTA & SERVICE -->
+        <div>
+            <div class="container">
+                <div class="testimonials-box">
+                    <!-- TESTIMONIALS -->
+                    <div class="testimonial">
+                        <h2 class="title">testimonial</h2>
+                        <div class="testimonial-card">
+                            <img src="./assets/images/testimonial-1.jpg" alt="alan doe" class="testimonial-banner" width="80" height="80">
+                            <p class="testimonial-name">Alan Doe</p>
+                            <p class="testimonial-title">CEO & Founder Invision</p>
+                            <img src="./assets/images/icons/quotes.svg" alt="quotation" class="quotation-img"
+                                width="26">
+                            <p class="testimonial-desc">
+                                Lorem ipsum dolor sit amet consectetur Lorem ipsum
+                                dolor dolor sit amet.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- CTA -->
+                    <div class="cta-container">
+                        <img src="./assets/images/cta-banner.jpg" alt="Best Online Support" class="cta-banner">
+                        <a href="https://wa.me/+62085767113554?text=Halo%20saya%20pelanggan%20dari%20BATMANKENCANA,%20Apakah%20saya%20bisa%20bertanya%20tentang%20web%20tersebut?" class="cta-content">
+                            <h2 class="cta-title">Best Online Support</h2>
+                            <p class="cta-text">Hours: 8AM - 11PM</p>
+                            <button class="cta-btn">Call Us Now Via WA</button>
+                            <p class="discount">Click Me</p>
+                        </a>
+                    </div>
+                    <!-- SERVICE -->
+                    <div class="service">
+                        <h2 class="title">Our Services</h2>
+                        <div class="service-container">
+                            <a href="javascript:void(0)" class="service-item">
+                                <div class="service-icon">
+                                    <ion-icon name="boat-outline"></ion-icon>
+                                </div>
+                                <div class="service-content">
+                                    <h3 class="service-title">Worldwide Delivery</h3>
+                                    <p class="service-desc">For Order Over $100</p>
+                                </div>
+                            </a>
+                            <a href="javascript:void(0)" class="service-item">
+                                <div class="service-icon">
+                                    <ion-icon name="rocket-outline"></ion-icon>
+                                </div>
+                                <div class="service-content">
+                                    <h3 class="service-title">Next Day delivery</h3>
+                                    <p class="service-desc">UK Orders Only</p>
+                                </div>
+                            </a>
+                            <a href="javascript:void(0)" class="service-item">
+                                <div class="service-icon">
+                                    <ion-icon name="call-outline"></ion-icon>
+                                </div>
+                                <div class="service-content">
+                                    <h3 class="service-title">Best Online Support</h3>
+                                    <p class="service-desc">Hours: 8AM - 11PM</p>
+                                </div>
+                            </a>
+                            <a href="javascript:void(0)" class="service-item">
+                                <div class="service-icon">
+                                    <ion-icon name="arrow-undo-outline"></ion-icon>
+                                </div>
+                                <div class="service-content">
+                                    <h3 class="service-title">Return Policy</h3>
+                                    <p class="service-desc">Easy & Free Return</p>
+                                </div>
+                            </a>
+                            <a href="javascript:void(0)" class="service-item">
+                                <div class="service-icon">
+                                    <ion-icon name="ticket-outline"></ion-icon>
+                                </div>
+                                <div class="service-content">
+                                    <h3 class="service-title">30% money back</h3>
+                                    <p class="service-desc">For Order Over $100</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- TESTIMONIALS, CTA & SERVICE -->
+    </main>
+    <!-- End MAIN -->
+
+    <!-- Start FOOTER -->
+    <footer>
+        <div class="footer-bottom">
+            <div class="container">
+                <img src="./assets/images/payment.png" alt="payment method" class="payment-img">
+                <p class="copyright">
+                    Copyright &copy; <a href="javascript:void(0)">BATMANKENCANA</a> all rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+    <!-- End FOOTER -->
+
+    <!-- bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+    <!-- custom js link -->
+    <script src="./assets/js/script.js"></script>
+    <!-- ionicon link -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>
