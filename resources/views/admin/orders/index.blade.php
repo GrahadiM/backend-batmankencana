@@ -14,7 +14,7 @@
 
     <div class="card">
         <div class="card-header">
-            <h3 class="card-title">{{ trans('menu.transaction.title').' '.$title }}</h3>
+            <h3 class="card-title">{{ $title }}</h3>
             {{-- <div class="card-tools">
                 <a href="{{ route('admin.orders.create') }}" class="btn btn-success btn-sm">{{ trans('global.add')." ".trans('menu.transaction.title') }}</a>
             </div> --}}
@@ -67,6 +67,13 @@
                                         <i class="fas fa-clipboard-list"></i>
                                     </a>
                                 </div>
+                                @if ($dt->status == 'PAID')
+                                    <div class="col-md-3">
+                                        <a class="btn btn-info btn-sm" href="{{ route('admin.order_deliveries.show', $dt->id) }}">
+                                            <i class="fas fa-clipboard-list"></i>
+                                        </a>
+                                    </div>
+                                @endif
                                 {{-- <div class="col-md-3">
                                     <button class="btn btn-danger btn-sm" type="submit">
                                         <i class="fas fa-trash"></i>

@@ -54,6 +54,7 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
         Route::put('/status/{id}', 'status_update')->name('status_update');
     });
     Route::resource('order_products', App\Http\Controllers\Admin\OrderProductController::class);
+    Route::resource('order_deliveries', App\Http\Controllers\Admin\OrderDeliveryController::class);
     Route::resource('histories', App\Http\Controllers\Admin\HistoryController::class);
     Route::resource('users', App\Http\Controllers\Admin\UserController::class);
 });

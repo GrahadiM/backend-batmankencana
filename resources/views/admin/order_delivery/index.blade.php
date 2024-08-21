@@ -17,7 +17,7 @@
             <h3 class="card-title">{{ $title.' History - ['.$tr->code_order.']' }}</h3>
             <div class="card-tools">
                 <a href="{{ route('admin.orders.index') }}" class="btn btn-danger btn-sm">Kembali</a>
-                {{-- <a href="{{ route('admin.order_products.edit', $tr->id) }}" class="btn btn-success btn-sm">{{ trans('global.add')." ".$title }}</a> --}}
+                <a href="{{ route('admin.order_deliveries.edit', $tr->id) }}" class="btn btn-success btn-sm">{{ trans('global.add')." ".$title }}</a>
             </div>
         </div>
         <!-- /.card-header -->
@@ -25,20 +25,20 @@
             <table id="example1" class="table table-bordered table-striped">
                 <thead>
                     <tr>
-                        <th>Name</th>
-                        <th>Jumlah</th>
+                        <th>Location</th>
+                        <th>Date of Created</th>
                     </tr>
                 </thead>
                 <tbody>
                     @forelse ($data as $key => $dt)
-                    <tr>
-                        <td>{{ $dt->product->name }}</td>
-                        <td>{{ $dt->qty }}</td>
-                    </tr>
+                        <tr>
+                            <td>{{ $dt->location_name }}</td>
+                            <td>{{ $dt->created_at }}</td>
+                        </tr>
                     @empty
-                    <tr>
-                        <td colspan="5"><center>Data Kosong!</center></td>
-                    </tr>
+                        <tr>
+                            <td colspan="2"><center>Data Kosong!</center></td>
+                        </tr>
                     @endforelse
                 </tbody>
             </table>

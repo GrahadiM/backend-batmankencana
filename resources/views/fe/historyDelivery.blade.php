@@ -12,8 +12,8 @@
                 <table class="table">
                     <thead>
                         <tr>
-                            <th scope="col">Lokasi</th>
-                            <th scope="col">Tanggal</th>
+                            <th scope="col">Location</th>
+                            <th scope="col">Date of Created</th>
                         </tr>
                     </thead>
                     <tbody>
