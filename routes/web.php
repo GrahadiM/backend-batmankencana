@@ -12,6 +12,7 @@ Route::controller(App\Http\Controllers\FrontendController::class)->name('fe.')->
         // History
         Route::get('/history', 'history')->name('history');
         Route::get('/historyProduct', 'historyProduct')->name('historyProduct');
+        Route::get('/historyDelivery', 'historyDelivery')->name('historyDelivery');
         // Profile
         Route::get('/profile', 'profile')->name('profile');
         Route::post('/profile-update', 'profileUpdate')->name('profileUpdate');

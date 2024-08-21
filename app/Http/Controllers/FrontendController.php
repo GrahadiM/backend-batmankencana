@@ -13,6 +13,7 @@ use App\Http\Requests\UpdateProfileRequest;
 use App\Http\Requests\UpdatePasswordRequest;
 use App\Models\Favourite;
 use App\Models\Order;
+use App\Models\OrderLocation;
 use App\Models\OrderProduct;
 
 class FrontendController extends Controller
@@ -230,6 +231,13 @@ class FrontendController extends Controller
         $data['products']   = OrderProduct::with('product')->where('transaction_id', $request->order_id)->latest('id')->get();
         $data['ongkir']     = 20000;
         return view('fe.historyProduct', $data);
+    }
+
+    public function historyDelivery(Request $request)
+    {
+        $data['order']      = Order::with('customer')->where('customer_id', Auth::user()->id)->find($request->order_id);
+        $data['location']   = OrderLocation::where('transaction_id', $request->order_id)->latest('id')->get();
+        return view('fe.historyDelivery', $data);
     }
 
     public function pay(Request $request) {

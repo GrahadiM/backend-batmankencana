@@ -13,7 +13,7 @@
                     <thead>
                         <tr>
                             <th scope="col">Code Order</th>
-                            <th scope="col">Thumbnail</th>
+                            <th scope="col">Bukti TF</th>
                             <th scope="col">Total Price</th>
                             <th scope="col">Address</th>
                             <th scope="col">Status</th>
@@ -37,11 +37,16 @@
                                         <button type="button" class="btn btn-primary btn-action" onclick="event.preventDefault(); document.getElementById('historyProduct-form-{{ $item->id }}').submit();">
                                             <ion-icon name="list-outline"></ion-icon>
                                         </button>
-                                        @if ($item->payment_status == 1)
+                                        @if ($item->payment_status == 2)
+                                            <button type="button" class="btn btn-info btn-action" onclick="event.preventDefault(); document.getElementById('historyDelivery-form-{{ $item->id }}').submit();">
+                                                <ion-icon name="list-outline"></ion-icon>
+                                            </button>
+                                        @endif
+                                        {{-- @if ($item->payment_status == 1)
                                             <button type="button" class="btn btn-warning btn-action" onclick="event.preventDefault(); document.getElementById('pay-form-{{ $item->id }}').submit();">
                                                 <ion-icon name="cash-outline"></ion-icon>
                                             </button>
-                                        @endif
+                                        @endif --}}
                                     </div>
                                 </td>
                             </tr>
@@ -52,6 +57,12 @@
                                 <input type="hidden" name="order_id" value="{{ $item->id }}">
                             </form>
                             <!-- History Product -->
+
+                            <!-- History Delivery -->
+                            <form id="historyDelivery-form-{{ $item->id }}" action="{{ route('fe.historyDelivery') }}" method="GET" class="d-none">
+                                <input type="hidden" name="order_id" value="{{ $item->id }}">
+                            </form>
+                            <!-- History Delivery -->
 
                             <!-- Pay -->
                             <form id="pay-form-{{ $item->id }}" action="{{ route('fe.pay') }}" method="POST" class="d-none">

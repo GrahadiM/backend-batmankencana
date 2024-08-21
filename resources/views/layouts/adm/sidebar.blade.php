@@ -66,7 +66,7 @@
                                 </li>
                             </ul>
                         </li>
-                        {{-- <li class="nav-item {{ Request::is('admin/users*') ? 'menu-is-opening menu-open' : '' }}">
+                        <li class="nav-item {{ Request::is('admin/users*') ? 'menu-is-opening menu-open' : '' }}">
                             <a href="#" class="nav-link {{ Request::is('admin/home*') ? 'active' : '' }}">
                                 <i class="nav-icon fas fa-id-card"></i>
                                 <p>{{ __('Menu User') }} <i class="right fas fa-angle-left"></i></p>
@@ -79,7 +79,7 @@
                                     </a>
                                 </li>
                             </ul>
-                        </li> --}}
+                        </li>
                         @endif
                     </ul>
                 </nav>

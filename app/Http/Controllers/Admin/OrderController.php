@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Models\Order;
 use App\Models\Category;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -76,9 +77,9 @@ class OrderController extends Controller
 
     public function status($id)
     {
-        $data['title']      = 'List Order';
-        $data['dt']         = Order::find($id);
-        $data['categories'] = Category::all();
+        $data['title']  = 'List Order';
+        $data['dt']     = Order::find($id);
+        // dd($data);
         return view('admin.orders.status', $data);
     }
 
@@ -87,8 +88,17 @@ class OrderController extends Controller
         request()->validate([
             'status' => 'required',
         ]);
-        $dt = Order::find($id);
-        $dt->status = $request->status;
+
+        $dt         = Order::find($id);
+        $dt->status = Str::upper($request->status);
+        $dt->note   = $request->note ?? 'Sudah terbayarkan pada tanggal dan jam ('.now().')';
+        if (Str::upper($request->status) == 'UNPAID') {
+            $dt->payment_status = 1;
+        } elseif (Str::upper($request->status) == 'PAID') {
+            $dt->payment_status = 2;
+        } else {
+            $dt->payment_status = 3;
+        }
         $dt->created_at = now();
         $dt->update();
 

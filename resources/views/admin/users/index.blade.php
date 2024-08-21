@@ -14,7 +14,7 @@
 
     <div class="card">
         <div class="card-header">
-            <h3 class="card-title">{{ trans('menu.transaction.title').' '.$title }}</h3>
+            <h3 class="card-title">{{ $title }}</h3>
             {{-- <div class="card-tools">
                 <a href="{{ route('admin.orders.create') }}" class="btn btn-success btn-sm">{{ trans('global.add')." ".trans('menu.transaction.title') }}</a>
             </div> --}}
@@ -24,57 +24,31 @@
             <table id="example1" class="table table-bordered table-striped">
                 <thead>
                     <tr>
-                        <th>Code</th>
-                        <th>Customer</th>
-                        <th>Total Harga</th>
-                        <th>Alamat</th>
-                        <th>Status</th>
-                        <th>Tanggal</th>
-                        <th>{{ trans('global.actions') }}</th>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Username</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Date of Birth</th>
+                        <th>Date of Register</th>
+                        {{-- <th>{{ trans('global.actions') }}</th> --}}
                     </tr>
                 </thead>
                 <tbody>
                     @foreach ($data as $key => $dt)
-                    <tr>
-                        <td>{{ $dt->code_order }}</td>
-                        <td>{{ $dt->customer->name }}</td>
-                        <td>{{ __('Rp.').number_format($dt->total_price,2,',','.') }}</td>
-                        <td>{{ $dt->address }}</td>
-                        <td>
-                            {{-- {{ $dt->status }} --}}
-                            @if ($dt->status == 'UNPAID')
-                                <a href="{{ route('admin.orders.status', $dt->id) }}" class="btn btn-warning">{{ $dt->status }}</a>
-                            @elseif ($dt->status == 'PAID')
-                                <a href="{{ route('admin.orders.status', $dt->id) }}" class="btn btn-info">{{ $dt->status }}</a>
-                            @elseif ($dt->status == 'SUCCESS')
-                                <a href="{{ route('admin.orders.status', $dt->id) }}" class="btn btn-success">{{ $dt->status }}</a>
-                            @else
-                                <a href="{{ route('admin.orders.status', $dt->id) }}" class="btn btn-danger">{{ $dt->status }}</a>
-                            @endif
-                        </td>
-                        <td>{{ $dt->updated_at ? $dt->updated_at : $dt->created_at }}</td>
-                        <td class="text-center">
-                            <form action="{{ route('admin.orders.destroy', $dt->id) }}" class="row" method="POST">
-                                @method('DELETE')
-                                @csrf
-                                <div class="col-md-3">
-                                    <a class="btn btn-info btn-sm" href="{{ route('admin.orders.show', $dt->id) }}">
-                                        <i class="fas fa-search"></i>
-                                    </a>
-                                </div>
-                                <div class="col-md-3">
-                                    <a class="btn btn-success btn-sm" href="{{ route('admin.order_products.show', $dt->id) }}">
-                                        <i class="fas fa-clipboard-list"></i>
-                                    </a>
-                                </div>
-                                {{-- <div class="col-md-3">
-                                    <button class="btn btn-danger btn-sm" type="submit">
-                                        <i class="fas fa-trash"></i>
-                                    </button>
-                                </div> --}}
-                            </form>
-                        </td>
-                    </tr>
+                        <?php
+                            $date = new DateTime($dt->dob3.'-'.$dt->dob2.'-'.$dt->dob1);
+                            echo $date->format('d-M-Y') . "\n";
+                        ?>
+                        <tr>
+                            <td>{{ $dt->id < 10 ? '0' . $dt->id : $dt->id }}</td>
+                            <td>{{ $dt->name }}</td>
+                            <td>{{ $dt->username }}</td>
+                            <td>{{ $dt->email }}</td>
+                            <td>{{ $dt->phone }}</td>
+                            <td>{{ $date->format('d-F-Y') }}</td>
+                            <td>{{ $dt->updated_at ? $dt->updated_at : $dt->created_at }}</td>
+                        </tr>
                     @endforeach
                 </tbody>
             </table>
