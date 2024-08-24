@@ -18,12 +18,16 @@ use App\Models\OrderProduct;
 
 class FrontendController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         // $data['categories'] = Category::where('type','sub')->get();
         // $data['categories'] = \App\Models\Category::with('children')->where('type','main')->whereNull('parent_id')->get();
         $data['categories'] = Category::all();
-        $data['products']   = Product::latest('id')->get();
+        if (!empty($request->search)) {
+            $data['products']   = Product::where('name', 'like', '%' . $request->search . '%')->latest('id')->get();
+        } else {
+            $data['products']   = Product::latest('id')->get();
+        }
         return view('fe.index', $data);
     }
 

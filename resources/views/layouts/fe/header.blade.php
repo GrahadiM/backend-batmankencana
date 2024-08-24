@@ -47,9 +47,9 @@
             <a href="javascript:void(0)" class="header-logo">
                 <img src="{{ asset('images/logo_default.png') }}" alt="{{ config('app.name', 'Laravel') }}" width="250" height="100">
             </a>
-            <form class="header-search-container">
+            <form class="header-search-container" action="{{ route('fe.index') }}" method="GET">
                 <input type="search" name="search" class="search-field" placeholder="Enter your product name...">
-                <button class="search-btn">
+                <button class="search-btn" type="submit">
                     <ion-icon name="search-outline"></ion-icon>
                 </button>
             </form>
