@@ -10,7 +10,8 @@
     <div class="container mb-5">
         <div class="card border-0" action="" method="post">
             <div class="card-body">
-                <table class="table">
+                <h2 class="title">#Detail Cart</h2>
+                <table class="table mb-4">
                     <thead>
                         <tr>
                             <th scope="col">#</th>
@@ -89,9 +90,9 @@
             </div>
             <form class="card-body" action="{{ route('fe.checkout') }}" method="POST" enctype="multipart/form-data">
                 @csrf
-                <h2 class="title">Detail Checkout</h2>
-                <div class="row">
-                    <div class="col-md-6">
+                <h2 class="title">#Detail Bank</h2>
+                <div class="row mb-4">
+                    <div class="col-md-6 mb-4">
                         <img src="{{ asset('images') }}/bank/Logo-BNI.webp" alt="payment method" class="payment-img">
                         <label for="bni" class="form-label">Bank BNI</label>
                         <input type="text" class="form-control" id="bni" name="bni" value="123456789" disabled>
@@ -101,19 +102,30 @@
                         <label for="bca" class="form-label">Bank BCA</label>
                         <input type="text" class="form-control" id="bca" name="bca" value="123456789" disabled>
                     </div>
-                    <div class="col-md-9">
-                        <div class="row">
-                            <div class="col-md-6 mb-3">
-                                <label for="address" class="form-label">Alamat Tujuan</label>
-                                <input type="text" class="form-control" id="address" name="address" placeholder="Jakarta Utara, DKI Jakarta, Indonesia" required>
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <label for="tf" class="form-label">Bukti Transfer</label>
-                                <input type="file" class="form-control" id="tf" name="tf" placeholder="Bukti Transfer" required>
-                            </div>
-                        </div>
+                </div>
+                <h2 class="title">#Detail Checkout</h2>
+                <div class="row mb-4">
+                    <div class="col-md-6 mb-4">
+                        <label for="address" class="form-label">Alamat Tujuan</label>
+                        <textarea name="address" id="address" rows="5" class="form-control" required>Jl. Kapuk Pulo No. 27, RT. 07 / RW. 10, Kapuk, Cengkareng, RT.7, Kapuk, Kecamatan Cengkareng, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11720</textarea>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-6 mb-4">
+                        <label for="note" class="form-label">Catatan</label>
+                        <textarea name="note" id="note" rows="5" class="form-control" required></textarea>
+                    </div>
+                    <div class="col-md-3 mb-4">
+                        <label for="name" class="form-label">Nama Akun/Pembeli</label>
+                        <input type="text" class="form-control" id="name" name="name" value="{{ Auth::user()->name }}" disabled>
+                    </div>
+                    <div class="col-md-3 mb-4">
+                        <label for="phone" class="form-label">Nomer WhatsApp</label>
+                        <input type="text" class="form-control" id="phone" name="phone" value="{{ Str::startsWith(Auth::user()->phone, '0') ? '+62' . substr(Auth::user()->phone, 1) : '+62' . Auth::user()->phone }}" disabled>
+                    </div>
+                    <div class="col-md-3 mb-4">
+                        <label for="tf" class="form-label">Bukti Transfer</label>
+                        <input type="file" class="form-control" id="tf" name="tf" placeholder="Bukti Transfer" required>
+                    </div>
+                    <div class="col-md-3 mb-4">
                         <label class="form-label">Total Pembayaran</label>
                         <p>{{ __('Rp.').number_format($total_price,2,',','.') }}</p>
                         <input type="hidden" name="total_price" value="{{ $total_price }}">

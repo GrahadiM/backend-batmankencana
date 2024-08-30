@@ -13,6 +13,7 @@ use App\Http\Requests\UpdateProfileRequest;
 use App\Http\Requests\UpdatePasswordRequest;
 use App\Models\Favourite;
 use App\Models\Order;
+use App\Models\OrderComplain;
 use App\Models\OrderLocation;
 use App\Models\OrderProduct;
 
@@ -242,6 +243,36 @@ class FrontendController extends Controller
         $data['order']      = Order::with('customer')->where('customer_id', Auth::user()->id)->find($request->order_id);
         $data['location']   = OrderLocation::where('transaction_id', $request->order_id)->latest('id')->get();
         return view('fe.historyDelivery', $data);
+    }
+
+    public function historyComplain(Request $request)
+    {
+        $data['order']      = Order::with('customer')->where('customer_id', Auth::user()->id)->find($request->order_id);
+        $data['complain']   = OrderComplain::where('transaction_id', $request->order_id)->latest('id')->get();
+        return view('fe.historyComplain', $data);
+    }
+
+    public function historyComplainCreate(Request $request)
+    {
+        $data['order']      = Order::with('customer')->where('customer_id', Auth::user()->id)->find($request->order_id);
+        $data['complain']   = OrderComplain::where('transaction_id', $request->order_id)->latest('id')->get();
+        return view('fe.historyComplainCreate', $data);
+    }
+
+    public function historyComplainStore(Request $request)
+    {
+        $data = new OrderComplain();
+        $data->transaction_id   = $request->order_id;
+        $data->note             = $request->note;
+        $data->save();
+        return redirect()->route('fe.historyComplain', 'order_id='.$request->order_id)->with('success', 'Pengaduan Berhasil di Tambahkan!');
+    }
+
+    public function historyComplainDetail(Request $request)
+    {
+        $data['order']      = Order::with('customer')->where('customer_id', Auth::user()->id)->find($request->transaction_id);
+        $data['complain']   = OrderComplain::where('id', $request->id)->first();
+        return view('fe.historyComplainDetail', $data);
     }
 
     public function pay(Request $request) {

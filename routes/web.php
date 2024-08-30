@@ -13,6 +13,10 @@ Route::controller(App\Http\Controllers\FrontendController::class)->name('fe.')->
         Route::get('/history', 'history')->name('history');
         Route::get('/historyProduct', 'historyProduct')->name('historyProduct');
         Route::get('/historyDelivery', 'historyDelivery')->name('historyDelivery');
+        Route::get('/historyComplain', 'historyComplain')->name('historyComplain');
+        Route::get('/historyComplain/create', 'historyComplainCreate')->name('historyComplainCreate');
+        Route::post('/historyComplain/store', 'historyComplainStore')->name('historyComplainStore');
+        Route::get('/historyComplain/detail', 'historyComplainDetail')->name('historyComplainDetail');
         // Profile
         Route::get('/profile', 'profile')->name('profile');
         Route::post('/profile-update', 'profileUpdate')->name('profileUpdate');
@@ -55,6 +59,7 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
     });
     Route::resource('order_products', App\Http\Controllers\Admin\OrderProductController::class);
     Route::resource('order_deliveries', App\Http\Controllers\Admin\OrderDeliveryController::class);
+    Route::resource('order_complains', App\Http\Controllers\Admin\OrderComplainController::class);
     Route::resource('histories', App\Http\Controllers\Admin\HistoryController::class);
     Route::resource('users', App\Http\Controllers\Admin\UserController::class);
 });

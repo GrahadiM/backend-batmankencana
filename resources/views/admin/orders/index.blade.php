@@ -73,6 +73,11 @@
                                             <i class="fas fa-clipboard-list"></i>
                                         </a>
                                     </div>
+                                    <div class="col-md-3">
+                                        <a class="btn btn-warning btn-sm" href="{{ route('admin.order_complains.show', $dt->id) }}">
+                                            <i class="fas fa-clipboard-list"></i>
+                                        </a>
+                                    </div>
                                 @endif
                                 {{-- <div class="col-md-3">
                                     <button class="btn btn-danger btn-sm" type="submit">

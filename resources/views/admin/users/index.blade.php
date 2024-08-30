@@ -36,17 +36,18 @@
                 </thead>
                 <tbody>
                     @foreach ($data as $key => $dt)
-                        <?php
+                        {{--
                             $date = new DateTime($dt->dob3.'-'.$dt->dob2.'-'.$dt->dob1);
                             echo $date->format('d-M-Y') . "\n";
-                        ?>
+                        --}}
                         <tr>
                             <td>{{ $dt->id < 10 ? '0' . $dt->id : $dt->id }}</td>
                             <td>{{ $dt->name }}</td>
                             <td>{{ $dt->username }}</td>
                             <td>{{ $dt->email }}</td>
                             <td>{{ $dt->phone }}</td>
-                            <td>{{ $date->format('d-F-Y') }}</td>
+                            <td>{{ Carbon\Carbon::parse($dt->dob3.'-'.$dt->dob2.'-'.$dt->dob1)->format('l, d F Y') }}</td>
+                            {{-- <td>{{ $dt->dob3.'-'.$dt->dob2.'-'.$dt->dob1 }}</td> --}}
                             <td>{{ $dt->updated_at ? $dt->updated_at : $dt->created_at }}</td>
                         </tr>
                     @endforeach

@@ -26,20 +26,25 @@
                             <tr>
                                 <td>{{ $item->code_order }}</td>
                                 <td>
-                                    <img src="{{ asset('images/tf').'/'.$item->tf }}" alt="{{ $item->tf }}" width="50" class="tf-img">
+                                    <a href="{{ asset('images/tf').'/'.$item->tf }}" target="_blank" rel="noopener noreferrer">
+                                        <img src="{{ asset('images/tf').'/'.$item->tf }}" alt="{{ $item->tf }}" width="50" class="tf-img">
+                                    </a>
                                 </td>
                                 <td>{{ __('Rp.').number_format($item->total_price,2,',','.') }}</td>
                                 <td>{{ $item->address }}</td>
                                 <td>{{ $item->status }}</td>
-                                <td>{{ $item->tgl_pesanan }}</td>
+                                <td>{{ $item->created_at }}</td>
                                 <td>
                                     <div class="btn-group" role="group" aria-label="Action">
-                                        <button type="button" class="btn btn-primary btn-action" onclick="event.preventDefault(); document.getElementById('historyProduct-form-{{ $item->id }}').submit();">
+                                        <button type="button" class="btn btn-outline-primary btn-action" onclick="event.preventDefault(); document.getElementById('historyProduct-form-{{ $item->id }}').submit();">
                                             <ion-icon name="list-outline"></ion-icon>
                                         </button>
                                         @if ($item->payment_status == 2)
-                                            <button type="button" class="btn btn-info btn-action" onclick="event.preventDefault(); document.getElementById('historyDelivery-form-{{ $item->id }}').submit();">
+                                            <button type="button" class="btn btn-outline-info btn-action" onclick="event.preventDefault(); document.getElementById('historyDelivery-form-{{ $item->id }}').submit();">
                                                 <ion-icon name="list-outline"></ion-icon>
+                                            </button>
+                                            <button type="button" class="btn btn-outline-danger btn-action" onclick="event.preventDefault(); document.getElementById('historyComplain-form-{{ $item->id }}').submit();">
+                                                <ion-icon name="chatbubbles"></ion-icon>
                                             </button>
                                         @endif
                                         {{-- @if ($item->payment_status == 1)
@@ -57,6 +62,12 @@
                                 <input type="hidden" name="order_id" value="{{ $item->id }}">
                             </form>
                             <!-- History Product -->
+
+                            <!-- History Complain -->
+                            <form id="historyComplain-form-{{ $item->id }}" action="{{ route('fe.historyComplain') }}" method="GET" class="d-none">
+                                <input type="hidden" name="order_id" value="{{ $item->id }}">
+                            </form>
+                            <!-- History Complain -->
 
                             <!-- History Delivery -->
                             <form id="historyDelivery-form-{{ $item->id }}" action="{{ route('fe.historyDelivery') }}" method="GET" class="d-none">
